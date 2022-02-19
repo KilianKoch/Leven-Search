@@ -1,0 +1,18 @@
+{
+  "name": "@themathkoch/leven-search",
+  "version": "1.0.3",
+  "description": "A Search library, with integrated threshhold.",
+  "main": "index.js",
+  "type":"commonjs",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "keywords": [
+    "Search",
+    "Threshold",
+    "Levenshtein",
+    "Distance"
+  ],
+  "author": "Kilian Koch",
+  "license": "ISC"
+}
