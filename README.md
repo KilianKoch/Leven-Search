@@ -19,6 +19,10 @@ const levenSearch = require("@themathkoch/leven-search");
 
 ```
 
+## GitHub
+
+https://github.com/KilianKoch/Leven-Search
+
 ## Functions 
 
 The package gives the following three functions to work with.
