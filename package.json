@@ -1,6 +1,6 @@
 {
   "name": "@themathkoch/leven-search",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A Search library, with integrated threshhold.",
   "main": "index.js",
   "type":"commonjs",

@@ -81,4 +81,61 @@ console.log(levenSearch.pass(str2,str3))
 
 ```
 ### 2. Example
+
+```
+
+const levenSearch = require("@themathkoch/leven-search");
+
+let input = "Apple";
+
+let data = ["Apple", "Grapple", "Banana", "Appletree", "pple"];
+
+let threshold = 3;
+
+let leven = true;
+
+console.log(levenSearch.search(input, data, threshold, leven));
+//Output [ 'Apple', 'Grapple', 'pple' ]
+
+threshold = 0.6;
+
+leven = false
+
+console.log(levenSearch.search(input, data, threshold, leven));
+//Output [ 'Apple', 'Grapple', 'Appletree', 'pple' ]
+
+```
+
 ### 3. Example
+
+```
+
+const levenSearch = require("@themathkoch/leven-search");
+
+let input = {1: "Apple", 2: "Euro", 3: "Tree"};
+
+let data = [{1: "Grapple", 2: "Dollar", 3: "Forest"},{1: "Grapple", 2: "Eüro", 3: "Tre", 4: "Ignored"}, input];
+
+let threshold = 3;
+
+let leven = true;
+
+console.log(levenSearch.search(input, data, threshold, leven, "1", "2", "3")); //Attribute 4 is ignored
+/* Output
+    [
+        { '1': 'Grapple', '2': 'Eüro', '3': 'Tre' , '4': 'Ignored'},
+        { '1': 'Apple', '2': 'Euro', '3': 'Tree' }
+    ]
+*/
+
+console.log(levenSearch.search(input, data, threshold, leven, "1")); //Use only one attribute
+/* Output
+    [
+        { '1': 'Grapple', '2': 'Dollar', '3': 'Forest' },
+        { '1': 'Grapple', '2': 'Eüro', '3': 'Tre', '4': 'Ignored' },
+        { '1': 'Apple', '2': 'Euro', '3': 'Tree' }
+    ]
+*/
+
+
+```
