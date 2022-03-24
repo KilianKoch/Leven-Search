@@ -30,16 +30,40 @@ function pass(input, compare, threshold = 0.5, Leven = false, ...attr) {
         }
     } else {
         for (let i = 0; i < attr.length; i++) {
-            if (input[attr[i]] == undefined || compare[attr[i]] == undefined) {
-                throw new UndefinedException("The attr. \"" + attr[i] + "\" is not defined. \n" + JSON.stringify(input) + "\n" + JSON.stringify(compare));
-            }
-            if (typeof input[attr[i]] != "string" || typeof compare[attr[i]] != "string") {
-                throw new TypeException("The attr. \"" + attr[i] + "\" does not contain a String. \n" + JSON.stringify(input) + "\n" + JSON.stringify(compare));
-            }
-            if (threshold == 0 && input[attr[i]] != compare[attr[i]]) {
-                return false;
-            } else {
-                if (dist(input[attr[i]], compare[attr[i]]) > wall) {
+            if (typeof attr[i] === 'object') {
+                if (input[attr[i]] == undefined || compare[attr[i]] == undefined) {
+                    throw new UndefinedException("The attr. \"" + attr[i] + "\" is not defined. \n" + JSON.stringify(input) + "\n" + JSON.stringify(compare));
+                }
+                if (typeof input[attr[i]] != "string" || typeof compare[attr[i]] != "string") {
+                    throw new TypeException("The attr. \"" + attr[i] + "\" does not contain a String. \n" + JSON.stringify(input) + "\n" + JSON.stringify(compare));
+                }
+                if (threshold == 0 && input[attr[i]] != compare[attr[i]]) {
+                    return false;
+                } else {
+                    if (dist(input[attr[i]], compare[attr[i]]) > wall) {
+                        return false;
+                    }
+                }
+            }else{
+                let Pass = false;
+                for(let j = 0; j < attr[i].In.length; j++){
+                    if (input[attr[i].Search] == undefined || compare[attr[i].In[j]] == undefined) {
+                        throw new UndefinedException("The attr. \"" + attr[i].Search + "\" or \"" + attr[i].In[j] + "\" is not defined. \n" + JSON.stringify(input) + "\n" + JSON.stringify(compare));
+                    }
+                    if (typeof input[attr[i].Search] != "string" || typeof compare[attr[i].In[j]] != "string") {
+                        throw new TypeException("The attr. \"" + attr[i].Search + "\" or \"" + attr[i].In[j] + "\" does not contain a String. \n" + JSON.stringify(input) + "\n" + JSON.stringify(compare));
+                    }
+                    if (threshold == 0 && input[attr[i].Search] == compare[attr[i].In[j]]) {
+                        Pass = true;
+                        break;
+                    } else {
+                        if (dist(input[attr[i].Search], compare[attr[i].In[j]]) <= wall) {
+                            Pass = true;
+                            break;
+                        }
+                    }
+                }
+                if(!Pass){
                     return false;
                 }
             }
