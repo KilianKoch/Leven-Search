@@ -247,7 +247,7 @@ console.log(levenSearch.search(input, data, threshold, leven, ...attr));
         { '1': 'NooooApple', '2': 'Apple', '3': 'Tre' }, not close enough to NooooApple, but to Apple
         { '1': 'Apple', '2': 'Euro', '3': 'Tree' }, that is just the input itself :)
     ]
-    { 1: "NooooApple", 2: "NoooooApple", 3: "Tre"}, did not pass, because both attr. does not fit the distance 
+    { 1: "NooooApple", 2: "NoooooApple", 3: "Tre"}, did not pass, because both attr. do not fit the distance 
 */
 
 
