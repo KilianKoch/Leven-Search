@@ -62,6 +62,21 @@ The third function is the search algorithmen to use for in Arrays. There we use 
 
 In the case, that threshold < 0, the function will return []. In the case of threshold ≥ 1 (to be ignored when Leven = true), the result will be data.
 
+## Exceptions
+
+The ```pass``` function throws 2 exceptions when using a no string in an search, or missing an attr. in an object.
+```
+function TypeException(message) {
+    this.message = message;
+    this.name = "TypeException";
+}
+
+function UndefinedException(message) {
+    this.message = message;
+    this.name = "UndefinedException";
+}
+```
+
 ## Examples
 
 Here we have 3 short examples of usecases for the package.

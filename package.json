@@ -1,6 +1,6 @@
 {
   "name": "@themathkoch/leven-search",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "A Search library, with integrated threshhold.",
   "main": "index.js",
   "type":"commonjs",
@@ -13,6 +13,10 @@
     "Levenshtein",
     "Distance"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KilianKoch/Leven-Search.git"
+  },
   "author": "Kilian Koch",
   "license": "ISC"
 }
