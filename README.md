@@ -87,7 +87,7 @@ let attr = [
 
 ## Exceptions
 
-The ```pass``` function throws 2 exceptions when using a no string in an search, or missing an attr. in an object.
+The ```pass``` function throws 2 exceptions when using no string in a search, or missing an attr. in an object.
 ```
 function TypeException(message) {
     this.message = message;
@@ -102,7 +102,7 @@ function UndefinedException(message) {
 
 ## Examples
 
-Here we have 3 short examples of usecases for the package.
+Here we have 4 short examples of usecases for the package.
 
 ### 1. Example
 ```
