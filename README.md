@@ -81,7 +81,7 @@ let attr = [
         Search: "attr-to-search",
         In: ["attr-to-search-in"]
     },
-    ...add as many cond. as like
+    ...add as many cond. as you like
 ]
 ```
 
