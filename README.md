@@ -46,7 +46,7 @@ The second function checks if the input and compared value fit the threshold. We
 
 This function is also in O(nm), with n,m the respective lengths of input and compare.
 
-The third function is the search algorithm to use in arrays. There we use the following properties:
+The third function is the search algorithm for arrays. There we use the following properties:
 
 | property   |      datatype      |  usecase | standardValue |
 |----------|:-------------:|------:|------:|
@@ -61,8 +61,8 @@ In case that threshold < 0, the function will return ```[]```. In case of thresh
 ## Search value in multiply attributes
 
 ### Short explanation
-Sometimes it is the case, that you want to search one string inside two attr. of an array of obj. e.g.
-you have an array of obj. with attr. ```name1```, and ```name2```, but all you got is a string called ```name```. You can know search inside both attr. simultaneously via the following input in ```attr```.
+Sometimes it is the case, that one wants to search one string inside two attributes of an array of object e.g.
+you have an array of objects with attr. ```name1```, and ```name2```, but all you got is a string called ```name```. You can now search inside both attributes simultaneously via the following input in ```attr```.
 
 ```
 let attr = [
