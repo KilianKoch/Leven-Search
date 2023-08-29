@@ -1,6 +1,6 @@
 # LEVEN SEARCH
 
-Leven Search is a Search algorithmen used for string based objects, or strings itself.
+Leven Search is a search algorithm used for string based objects, or strings themselves.
 
 ## Installation
 
@@ -11,7 +11,7 @@ To install the package simply write the following in the terminal.
 npm i @themathkoch/leven-search
 
 ```
-To use the package check that you are using "commonjs" as your package type. Then you can get the module via the following.
+To use the package you need to use "commonjs" as your package type i.e. by setting:
 
 ```
 
@@ -21,7 +21,7 @@ const levenSearch = require("@themathkoch/leven-search");
 
 ## Functions 
 
-The package gives the following three functions to work with.
+The package gives the following three functions to work with:
 
 ```
 function dist(str1, str2) ~ levenSearch.dist
@@ -34,7 +34,7 @@ function search(input, data, threshold = 0.5, Leven = false, ...attr) ~ levenSea
 
 The first function calculates the so called levenshtein distance for two strings. This distance describes the number of transformation needed to get to one string to the other. This distance will be calculated in O(nm), where n,m are the respective string lengths.
 
-The second function checks if the input and compare value fits the threshold. There we use the following properties:
+The second function checks if the input and compared value fit the threshold. We use the following properties:
 
 | property   |      datatype      |  usecase | standardValue |
 |----------|:-------------:|------:|------:|
@@ -44,9 +44,9 @@ The second function checks if the input and compare value fits the threshold. Th
 | Leven | bool |true,  threshold in [0,∞). false, threshold in [0,1)  |false |
 | attr | Obj[]/String[] |which attr to compare |empty |
 
-This function is in O(nm), with n,m the respectiv lengths of input and compare.
+This function is also in O(nm), with n,m the respective lengths of input and compare.
 
-The third function is the search algorithmen to use for in Arrays. There we use the following properties:
+The third function is the search algorithm for arrays. There we use the following properties:
 
 | property   |      datatype      |  usecase | standardValue |
 |----------|:-------------:|------:|------:|
@@ -56,13 +56,13 @@ The third function is the search algorithmen to use for in Arrays. There we use 
 | Leven | bool |true,  threshold in [0,∞). false, threshold in [0,1)  |false |
 | attr | Obj[]/String[] |which attributes to compare to |empty |
 
-In the case, that threshold < 0, the function will return []. In the case of threshold ≥ 1 (to be ignored when Leven = true), the result will be data.
+In case that threshold < 0, the function will return ```[]```. In case of threshold ≥ 1 (to be ignored when Leven = true), the result will be the data.
 
 ## Search value in multiply attributes
 
 ### Short explanation
-Sometimes it is the case, that you want to search one string inside two attr. of an array of obj. e.g.
-you have an array of obj. with attr. ```name1```, and ```name2```, but all you got is a string called ```name```. You can know search inside both attr. simultaneously via the following input in ```attr```.
+Sometimes it is the case, that one wants to search one string inside two attributes of an array of object e.g.
+you have an array of objects with attr. ```name1```, and ```name2```, but all you got is a string called ```name```. You can now search inside both attributes simultaneously via the following input in ```attr```.
 
 ```
 let attr = [
